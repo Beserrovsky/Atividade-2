@@ -26,10 +26,22 @@ int main(void)
     // Define o valor do duty cycle: nesse caso, duty_100 (LED quase desligado)
     pwm_tpm_CnV(TPM2, 0, duty_50);
 
+    // uint16_t var_duty = TPM_MODULE/2;       // 50% de duty cycle (meio brilho)
+
+    // uint8_t state = 0; // varies from 0 to 100, only integers - resolution of 101 states
+
     // Loop infinito
     for (;;)
     {
-        // O programa poderia alterar o duty cycle dinamicamente aqui se desejado
+        // // Runs at ?? Hz
+
+        // if (state < 100) state++;
+
+        // // Maybe it is too fast, increasing state and adjusting on the var_duty might do the trick.
+
+
+        // var_duty = TPM_MODULE * (state / 100);
+        // pwm_tpm_CnV(TPM2, 0, var_duty);
     }
 
     return 0;
